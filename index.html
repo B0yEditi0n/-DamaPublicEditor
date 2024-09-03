@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <script src="./js/lib/jquery.js"></script>
+        <script src="./js/lib.js"></script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/lateralDrag.css">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <title>DamaPublicEditor</title>
+    </head>
+    <body>
+        <div class="gridBorad column">
+            <div class="Regua">
+              <div id="board">
+                <div class="tiles gridTabuleiro"></div>
+              </div>
+              
+            
+            <div class="regua_vertical">
+              <div>8</div>
+              <div>7</div>
+              <div>6</div>
+              <div>5</div>
+              <div>4</div>
+              <div>3</div>
+              <div>2</div>
+              <div>1</div>
+            </div>
+            <div class="regua_horizontal">
+              <div>A</div>
+              <div>B</div>
+              <div>C</div>
+              <div>D</div>
+              <div>E</div>
+              <div>F</div>
+              <div>G</div>
+              <div>H</div>
+            </div>
+            </div>
+        </div>
+
+        <div class="lateral">
+            <!-- # Barras e Peças a Serem adicionadas -->
+            <div id="kingWhite" draggable="true">
+                <img src="img/king1.png">
+            </div>
+            <div id="white" draggable="true" >
+                <img src="img/ws.png">
+            </div>
+            <div id="kingBlack" draggable="true">
+                <img src="img/king2.png">
+            </div>
+            <div id="black" draggable="true">
+                <img src="img/bs.png">
+            </div>
+            <div id="saveLayout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy2" viewBox="0 0 16 16">
+                    <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v3.5A1.5 1.5 0 0 1 11.5 6h-7A1.5 1.5 0 0 1 3 4.5V1H1.5a.5.5 0 0 0-.5.5m9.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+                </svg>
+            </div>
+        </div>
+    </body>
+    <script src="./js/event.js"></script>
+</html>
