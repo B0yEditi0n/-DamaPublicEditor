@@ -18,18 +18,15 @@ function dropPeca(evt){
             break;
     }
     gridTab.anexaPosicao(evt.currentTarget.id, peca)
-    //node.appendChild(evt.currentTarget.cloneNode(true));
-
 }
 
 // Selecionar Drag
 function dragPiece(evt){
-    //console.log(evt.currentTarget)
     gridTab.pecaDrag = evt.currentTarget;
-    //debugger;
 }
 
 $('#kingWhite').on('drag', dragPiece);
+$('#kingWhite').on('dragstart', dragPiece);
 $('#white').on('drag', dragPiece);
 $('#kingBlack').on('drag', dragPiece);
 $('#black').on('drag', dragPiece);
