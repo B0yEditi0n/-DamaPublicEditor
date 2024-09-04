@@ -53,15 +53,21 @@ class Tabuleiro{
                 
                 //<div class="tile" id="tile0" style="top:0vmin;left:10vmin;"></div>
                 // Cria os espaços de peças
-                var peca = document.createElement('div');
-                peca.id = `tile${index}`
-                peca.className = 'tile'
-                $(peca).css('top', `${styleTop * 10}vmin`)
-                $(peca).css('left', `${styleLeft * 10}vmin`)
+                var espaco = document.createElement('div');
+                espaco.id = `tile${index}`
+                espaco.className = 'tile'
+                //espaco.setAttribute("draggable", "true")
+                $(espaco).css('top', `${styleTop * 10}vmin`)
+                $(espaco).css('left', `${styleLeft * 10}vmin`)
                 
-                $(peca).on("drop", dropPeca);
+                // Impedir o comportamento padrão (impedir que o arquivo seja aberto)
+                $(espaco).on('dragover',function(evt){
+                    evt.preventDefault();
+                })
 
-                this.htmlTab.get(0).appendChild(peca);
+                $(espaco).on("drop", dropPeca);
+
+                this.htmlTab.get(0).appendChild(espaco);
 
                 // Incrementa os contadores
                 index++
@@ -121,11 +127,25 @@ class Tabuleiro{
             $(".player1pieces").get(0).appendChild(pecaHTML)
         }
         
-        // evento de Remoção
-        pecaHTML.setAttribute('draggable', 'true')
-        $(pecaHTML).on('drag', function(){
+        var idDrop = Element;
 
+        //evento de Remoção
+        pecaHTML.setAttribute('draggable', 'true')
+        $(pecaHTML).on('drag', function(evt){
+            idDrop = evt.currentTarget;
         })
+
+        // Fazer uma lixeira
+        // Impedir o comportamento padrão (impedir que o arquivo seja aberto)
+        $(document.body).on('dragover',function(evt){
+            console.log(idDrop)
+            // if(){
+            //     evt.preventDefault();
+            // }
+            
+        })
+
+        //$(espaco).on("drop", dropPeca);
 
     }
     
