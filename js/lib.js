@@ -135,16 +135,33 @@ class Tabuleiro{
             idDrop = evt.currentTarget;
         })
 
-        // Fazer uma lixeira
         // Impedir o comportamento padrão (impedir que o arquivo seja aberto)
         $(document.body).on('dragover',function(evt){
-            console.log(idDrop)
-            // if(){
-            //     evt.preventDefault();
-            // }
+            try {
+                if($('.gridBorad').get(0).contains(idDrop)){
+                    evt.preventDefault();
+                }
+            } catch (error) {
+                    
+            }
             
         })
 
+        new function(){
+            var PositionGrid = {y: y, x: x}
+            $(document.body).on('drop',function(evt){
+                try {
+                    if($('.gridBorad').get(0).contains(idDrop)){
+                        idDrop.remove();
+                        gridTab.postion[y][x] = 0;
+                    }
+                } catch (error) {
+                    
+                }
+                
+            })
+        }
+        
         //$(espaco).on("drop", dropPeca);
 
     }
