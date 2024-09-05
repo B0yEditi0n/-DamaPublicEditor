@@ -14,7 +14,7 @@ function dropPeca(evt){
             peca = 'B'
             break;
         case 'black':
-            peca = '2'
+            peca = '-1'
             break;
     }
     gridTab.anexaPosicao(evt.currentTarget.id, peca)
