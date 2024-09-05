@@ -100,7 +100,7 @@ class Tabuleiro{
         }
 
 
-        if(peca == 'B' || peca == '2'){
+        if(peca == 'B' || peca == '-1'){
             $(".player2pieces").get(0).appendChild(pecaHTML)
         }else if (peca == 'W' || peca == '1'){
             $(".player1pieces").get(0).appendChild(pecaHTML)
