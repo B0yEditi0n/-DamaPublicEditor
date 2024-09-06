@@ -21,4 +21,5 @@
 #saveLayout svg{
     width: 4vmin;
     height: 4vmin;
+    cursor: pointer;
 }
