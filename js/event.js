@@ -40,3 +40,9 @@ $("#saveLayout").on('click', function(){
     link.remove();
 })
 
+$("#searchLayout").on('click', function(){
+    window.location.href = `https://b0yediti0n.github.io/DamaPublicTreino/damaPlay.html?config=${JSON.stringify(gridTab.postion)}`;
+})
+
+
+
