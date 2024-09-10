@@ -24,7 +24,12 @@ function dropPeca(evt){
 function dragPiece(evt){
     gridTab.pecaDrag = evt.currentTarget;
 }
+var vezColor = 1 // brancas 
+$('#choiceColor').on('click', function(){
+    vezColor *= -1
+    // Atualiza a cor
 
+})
 $('#kingWhite').on('drag', dragPiece);
 $('#kingWhite').on('dragstart', dragPiece);
 $('#white').on('drag', dragPiece);
@@ -41,7 +46,7 @@ $("#saveLayout").on('click', function(){
 })
 
 $("#searchLayout").on('click', function(){
-    window.location.href = `https://b0yediti0n.github.io/DamaPublicTreino/damaPlay.html?config=${JSON.stringify(gridTab.postion)}`;
+    window.location.href = `https://b0yediti0n.github.io/DamaPublicTreino/damaPlay.html?config=${JSON.stringify(gridTab.postion)}&jogador=${vezColor}`;
 })
 
 

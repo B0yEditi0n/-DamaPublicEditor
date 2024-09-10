@@ -6,8 +6,9 @@
     
     align-items: center;
     justify-content: center;
-    gap: 8vmin;
-    height: 80vmin;
+    gap: 5vmin;
+    top: calc(50% - 45vmin);
+    height: 90vmin;
 
     padding: 5px;
     background-color: white;
@@ -18,7 +19,7 @@
     width: 8vmin;
     height: 8vmin;
 }
-#saveLayout svg, #saveLayout, svg{
+.icon svg, .icon span{
     width: 4vmin;
     height: 4vmin;
     cursor: pointer;
