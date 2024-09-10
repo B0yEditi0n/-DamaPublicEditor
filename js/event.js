@@ -28,6 +28,16 @@ var vezColor = 1 // brancas
 $('#choiceColor').on('click', function(){
     vezColor *= -1
     // Atualiza a cor
+    if(vezColor > 0){
+        $('.gIcon').css("background-color", "white")
+        $('.gIcon').css("color", "black")
+        $('.gIcon').prop('title', 'Brancas Começam');
+    }else{
+        $('.gIcon').css("background-color", "black")
+        $('.gIcon').css("color", "white")
+        $('.gIcon').prop('title', 'Pretas Começam');
+    }
+    
 
 })
 $('#kingWhite').on('drag', dragPiece);

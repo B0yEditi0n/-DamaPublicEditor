@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'google';
+    src: url('../assent/GoogleFonts.woff2'), format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.gIcon{
+    font-size: 5vmin;
+    font-family: 'google';
+    color: black;
+    background-color: white;
+    border-radius: 5px; 
+    border: solid black;
+    cursor: pointer;
+
+    /* Desabilita selecionar como texto */
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
