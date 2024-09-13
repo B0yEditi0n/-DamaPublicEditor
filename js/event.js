@@ -60,4 +60,44 @@ $("#searchLayout").on('click', function(){
 })
 
 
+//# evento de dinamização do CSS
 
+function checkSizeDevice(){
+    // para tornar tudo mais responsivo
+    //console.log($(window).width())
+    
+    //; remontar os epaços dos tabuleiros
+    var listTitles = $("#board .tile");
+    for (let i=0; i < listTitles.length; i++){
+        var title = listTitles[i]
+        try{
+           var intId = title.id.replace(/[^0-9\.]+/g, "");
+        }catch(e){
+            debugger;
+        }
+
+        //? id para cordenadas
+        var y = Math.floor(intId / 4);        
+        if(y % 2 == 0){ // Par
+            var x = 1 + ((intId % 4) * 2)
+        }else{ // impar
+            var x =(intId % 4) * 2
+        }
+        
+        if($(window).width() <= 1200){
+            //? Remonta os espaços
+            $(title).css("top", `${y * 12}vmin`)
+            $(title).css("left", `${x * 12}vmin`)
+        }else{
+            //? Remonta os espaços
+            $(title).css("top", `${y * 10}vmin`)
+            $(title).css("left", `${x * 10}vmin`)
+        }
+
+    }
+}
+window.onload = function() {
+    checkSizeDevice()
+}
+
+$(window).on("resize", checkSizeDevice)

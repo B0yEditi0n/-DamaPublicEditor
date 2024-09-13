@@ -24,3 +24,16 @@
     height: 4vmin;
     cursor: pointer;
 }
+
+/*# Caso apareçam clientes mobile */
+@media only screen and (max-width: 1200px) {
+    /* Muda a posição da barra */
+   .lateral{
+        flex-direction: row;
+        top: 15px;
+        
+        height: 10vmin;
+        width: 90vmin;
+   } 
+   
+}
