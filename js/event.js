@@ -47,7 +47,7 @@ $('#kingBlack').on('drag', dragPiece);
 $('#black').on('drag', dragPiece);
 
 $("#saveLayout").on('click', function(){
-    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(gridTab.postion));
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ postion: gridTab.postion,jogador: vezColor}));
     var link =  document.createElement("a");
     link.setAttribute("href", dataStr);
     link.setAttribute('download', 'JogoSalvo.json');

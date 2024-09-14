@@ -127,7 +127,6 @@ class Tabuleiro{
         })
 
         new function(){
-            var PositionGrid = {y: y, x: x}
             $(document.body).on('drop',function(evt){
                 try {
                     if($('.gridBorad').get(0).contains(idDrop)){
